@@ -7,7 +7,7 @@ router.get('/getusers',getUsers);
 
 router.get('/getuser',getUser);
 
-router.post('/signin',validaUsuario,signin);
+router.post('/signin',signin);
 
 
 
