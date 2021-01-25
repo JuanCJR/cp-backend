@@ -1,0 +1,23 @@
+#RESCATA IMAGEN DE NODE 
+FROM node:12.18.3
+
+
+#CREA DIRECTORIO Y/O SE POSICIONS EN EL
+WORKDIR /var/app
+
+#COPIA TODO A DIRECTORIO DE APP
+COPY . /var/app
+
+#INSTALACION DE PAQUETES NODE
+RUN npm install
+
+#CAMBIA PERMISOS DE EJECUCION AL ENTRYPOINT
+RUN chmod +x entrypoint.sh
+
+ENV PORT=8081
+
+#Define the network ports that this container will listen on at runtime.
+EXPOSE 8081
+
+#Configure this container for running as an executable.
+ENTRYPOINT [ "/var/app/entrypoint.sh" ]

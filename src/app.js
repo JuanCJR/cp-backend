@@ -4,7 +4,7 @@ const cors = require('cors')
 const app = express();
 
 //settings
-app.set('PORT',process.env.PORT);
+app.set('PORT',process.env.PORT ||8081);
 
 
 
